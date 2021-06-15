@@ -1,16 +1,17 @@
 import pyautogui
 import cv2
+'''all mouse and key controls here'''
 
-
-def check_image(filename, confidence):
+def check_image(filename, confidence,areaw=12,areah=12):
     '''
     :param filename File to search image from
     :param confidence the percentage of the compare precision
     '''
     x = int(filename.rsplit('X')[1].rsplit('Y')[0])
     y = int(filename.rsplit('Y')[1].rsplit('.')[0])
-    if pyautogui.locateCenterOnScreen(filename, region=(x - 1, y - 1, 12, 12), confidence=confidence):
+    if position:=pyautogui.locateCenterOnScreen(filename, region=(x - 1, y - 1, areaw, areah), confidence=confidence):
         print('found')
+        x,y=position
         return x,y
     else:
         print('not found')
