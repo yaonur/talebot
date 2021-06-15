@@ -2,7 +2,6 @@ import threading
 import keyboard
 import time
 import bot
-import asyncio
 
 
 def checkkey():

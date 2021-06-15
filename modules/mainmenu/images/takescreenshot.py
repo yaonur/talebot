@@ -10,8 +10,8 @@ def takeScreenShot():
             time.sleep(.5)
             image = pyautogui.screenshot(region=(x, y, 10, 10))
             filename = pyautogui.prompt(text='enter file name', title='', default='')
-            print(f'/{filename}X{x}Y{y}.jpg')
-            image.save(f'./{filename}X{x}Y{y}.jpg')
+            print(f'/{filename}X{x}Y{y}.png')
+            image.save(f'./{filename}X{x}Y{y}.png')
 
 
 
