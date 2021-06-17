@@ -1,9 +1,8 @@
 import pyautogui
-# def checkimage(filename,confidence)
-import os
-print (os.getcwd())
-    # img=pyautogui.locateCenterOnScreen(filename,region=)
+pyautogui.moveTo(1620,620,.3)
+pyautogui.moveTo(1668,657,.3)
+pyautogui.moveTo(1716,694,.3)
+pyautogui.moveTo(1764,731,.3)
+pyautogui.moveTo(1812,731,.3)
+pyautogui.moveTo(1860,731,.3)
 
-# string = 'redBookX1752Y784.jpg'
-# print(string.rsplit('x')[1])#.rsplit('y')[0])
-# # print(string.rsplit('y')[1].rsplit('.')[0])

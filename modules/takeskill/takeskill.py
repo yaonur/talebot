@@ -3,26 +3,43 @@ import pyautogui
 import time
 from modules.openshop import openshop
 import os
-skill_points=0
+
+skill_points = 0
+
+
 def main():
     os.chdir(r'F:/python/talebot')
     global skill_points
-    final=0
-    # openshop.main()
+    final = 0
+    time.sleep(3)
+    if not gf.check_image('modules/takeskill/lordupX106Y435.png', .7) or gf.check_image(
+            'modules/takeskill/takeskillbossX106Y560.png', .9):
+        print('lord challange screen is off returning')
+        return
+
+    openshop.main()
     opentome('modules/takeskill/tomes/redtomeX1878Y814.png')
-    final=skill_points*3
+    print('found red tome')
+    final = skill_points * 3
     opentome('modules/takeskill/tomes/yellowtomeX1685Y812.png')
-    final+=skill_points*2
+    print('found yellow tome')
+    final += skill_points * 2
     opentome('modules/takeskill/tomes/orangetomeX1635Y847.png')
-    final+=skill_points
+    print('found orange tome')
+    final += skill_points
     opentome('modules/takeskill/tomes/purpletomeX1639Y813.png')
-    if final<27:
+    print(final)
+    print(' skill points')
+    if final < 27:
         gf.leave_game()
     # take_skill()
+    return
+
+
 def opentome(filename):
-    while tome:= gf.check_personal(filename,.8):
-        gf.drag_click(tome,(1234,964))
-        gf.drag((1234,964),tome)
+    while tome := gf.check_personal(filename, .8):
+        gf.drag_click(tome, (1234, 964))
+        gf.drag((1234, 964), tome)
         time.sleep(.1)
         take_skill()
         time.sleep(.1)
@@ -30,16 +47,16 @@ def opentome(filename):
 
 def take_skill():
     global skill_points
-    skill_points=0
-    if skill:= gf.check_personal('modules/takeskill/skills/blood.png',.8):
-        gf.drag_click(skill,(1234,964))
-        skill_points+=6
-    if skill:= gf.check_personal('modules/takeskill/skills/life.png',.8):
-        gf.drag_click(skill,(1234,964))
+    skill_points = 0
+    if skill := gf.check_personal('modules/takeskill/skills/blood.png', .8):
+        gf.drag_click(skill, (1234, 964))
+        skill_points += 6
+    if skill := gf.check_personal('modules/takeskill/skills/life.png', .8):
+        gf.drag_click(skill, (1234, 964))
         skill_points += 5
-    if skill:= gf.check_personal('modules/takeskill/skills/bleeding.png',.8):
-        gf.drag_click(skill,(1234,964))
-        skill_points+=3
+    if skill := gf.check_personal('modules/takeskill/skills/bleeding.png', .8):
+        gf.drag_click(skill, (1234, 964))
+        skill_points += 3
 
 
 skill_points += 6
