@@ -8,13 +8,23 @@ def takeScreenShot():
         if keyboard.is_pressed(' '):
             x,y=pyautogui.position()
             time.sleep(.5)
-            image = pyautogui.screenshot(region=(x, y, 40, 20))
+            image = pyautogui.screenshot(region=(x, y, 10 , 10 ))
+
             filename = pyautogui.prompt(text='enter file name', title='', default='')
             print(f'/{filename}X{x}Y{y}.png')
             image.save(f'./{filename}X{x}Y{y}.png')
 
 
-
+# def takeScreenShot():
+#     while True:
+#         if keyboard.is_pressed(' '):
+#             x,y=pyautogui.position()
+#             time.sleep(.5)
+#             image = pyautogui.screenshot(region=(1077 , 447, 10 , 15))
+#             filename = pyautogui.prompt(text='enter file name', title='', default='')
+#             # print(f'/{filename}X{x}Y{y}.png')
+#             image.save(f'{filename}.png')
+#
 
 # def on_move(x, y):
 #     print('Pointer moved to {0}'.format(
@@ -34,7 +44,7 @@ def takeScreenShot():
 #
 # def on_scroll(x, y, dx, dy):
 #     listener.stop()
-#     # time.sleep(.5)
+  #     # time.sleep(.5)
 #     # image = pyautogui.screenshot(region=(x, y, 10, 10))
 #     # filename = pyautogui.prompt(text='enter file name', title='', default='')
 #     # print(f'/{filename}X{x}Y{y}.jpg')

@@ -1,10 +1,18 @@
-from modules.mainmenu.mainmenu import check_main_menu
+from modules.mainmenu import mainmenu
+from modules.takehero import takehero
+from modules.gameend import game_end
+from modules.takeskill import takeskill
 
+import time
+def main():
+    while True:
+        mainmenu.main()
+        time.sleep(1)
+        takehero.main()
+        time.sleep(1)
+        takeskill.main()
+        time.sleep(1)
 
-def check_main_state():
-    check_main_menu()
-    # check_game_running()
-    # check_ingame()
 
 if __name__ == '__main__':
-    check_main_menu()
+    main()
